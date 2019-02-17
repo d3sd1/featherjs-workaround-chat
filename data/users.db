@@ -1,0 +1,3 @@
+{"email":"pwnw w","password":"$2a$13$EtdB/ZKscnFuTMuK78QDO.QVflViMJihNHTcHOcOIwvyoi8DXKdMG","avatar":"https://s.gravatar.com/avatar/17a1f1e8d816395967ce6e4f5981af3d?s=60","_id":"ZxvmG0BDc1F54o6T"}
+{"email":"admin@admin.es","password":"$2a$13$xe7X4mUUSvL/s.eLg7AZnemGS99BW1daInpgHy0CfMF8AD/SPGpZq","avatar":"https://s.gravatar.com/avatar/608d7c6f763bc44adc9581c9094ad390?s=60","_id":"jCtCOjKIYiVYrkht"}
+{"$$indexCreated":{"fieldName":"email","unique":true,"sparse":false}}
