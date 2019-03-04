@@ -4,6 +4,9 @@ const app = require('./app');
 const port = app.get('port');
 const server = app.listen(port);
 
+app.on('databaseLoaded', user => function () {
+    console.log("DB LOADED");
+});
 process.on('unhandledRejection', (reason, p) =>
   logger.error('Unhandled Rejection at: Promise ', p, reason)
 );

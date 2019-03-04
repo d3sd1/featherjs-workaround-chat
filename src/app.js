@@ -18,7 +18,14 @@ const channels = require('./channels');
 
 const authentication = require('./authentication');
 
+const Sequelize = require('sequelize');
+const service = require('feathers-sequelize');
+
+/* ORM Definition */
+const sequelize = require('./orm');
+
 const app = express(feathers());
+
 
 // Load app configuration
 app.configure(configuration());
@@ -27,7 +34,7 @@ app.use(cors());
 app.use(helmet());
 app.use(compress());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 app.use(favicon(path.join(app.get('public'), 'favicon.ico')));
 // Host the public folder
 app.use('/', express.static(app.get('public')));
@@ -35,6 +42,8 @@ app.use('/', express.static(app.get('public')));
 // Set up Plugins and providers
 app.configure(express.rest());
 app.configure(socketio());
+
+app.configure(sequelize);
 
 // Configure other middleware (see `middleware/index.js`)
 app.configure(middleware);
@@ -46,7 +55,7 @@ app.configure(channels);
 
 // Configure a middleware for 404s and the error handler
 app.use(express.notFound());
-app.use(express.errorHandler({ logger }));
+app.use(express.errorHandler({logger}));
 
 app.hooks(appHooks);
 

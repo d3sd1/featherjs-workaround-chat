@@ -4,6 +4,8 @@ const local = require('@feathersjs/authentication-local');
 
 
 module.exports = function (app) {
+  /*JWT DISABLED
+
   const config = app.get('authentication');
 
   // Set up authentication with the secret
@@ -23,5 +25,5 @@ module.exports = function (app) {
         authentication.hooks.authenticate('jwt')
       ]
     }
-  });
+  });*/
 };
